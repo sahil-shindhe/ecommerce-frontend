@@ -1,9 +1,6 @@
 *{
     scroll-behavior: smooth !important;
 }
-.carousel-item{
-    height: 80vh;
-}
 body{
     font-family: arial,sans-serif;
     margin: 0;
