@@ -9,11 +9,11 @@ body{
 }
 #brand{
     display: none;
-    color: blue;
-    font-size: 3em;
 }
 @media(max-width:870px){
 #brand{
     display: block;
+    color: blue;
+    font-size: 3em;
 }
 }
