@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-Commerce Frontend</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="styles/main.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -145,8 +146,10 @@ class="form-control">
                             <textarea name="msg" id="msg" class="form-control" 
 placeholder="Message"></textarea> 
                         </div> 
+                        <br>
+                        <center>
                         <button type="submit" class="btn btn-primary 
-btn-block">Submit</button> 
+btn-block">Submit</button> </center>
                     </form> 
                 </div> 
             </div> 
@@ -223,6 +226,38 @@ illum ipsum quas ad
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
-  <script src="scripts/app.js"></script>
+  <script>
+$(document).ready(function() {
+  $('#form').submit(function(e) {
+    e.preventDefault(); // prevent default first to validate manually
+
+    /* get values */
+    const name = $('#name').val().trim();
+    const email = $('#email').val().trim();
+    const msg = $('#msg').val().trim();
+
+    /* reset previous errors */
+    $('.error').remove();
+
+    let isvalidform = true;
+
+    // validation conditions
+    if (name.length < 1) {
+      $('#name').after('<span class="error">This field is required</span>');
+      isvalidform = false; // ✅ update, not re-declare
+    }
+
+    if (email.length < 1) {
+      $('#email').after('<span class="error">This field is required</span>');
+      isvalidform = false;
+    }
+
+    if (msg.length < 1) {
+      $('#msg').after('<span class="error">This field is required</span>');
+      isvalidform = false;
+    }
+  });
+});
+</script>
 </body>
 </html>
