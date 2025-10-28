@@ -10,10 +10,14 @@ body{
 #brand{
     display: none;
 }
+ul li a{
+    text-decoration: none;
+    color: black;
+}
 @media(max-width:870px){
 #brand{
     display: block;
-    color: blue;
+    color: black;
     font-size: 3em;
 }
 }
