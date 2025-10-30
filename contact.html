@@ -256,6 +256,10 @@ $(document).ready(function() {
       $('#msg').after('<span class="error">This field is required</span>');
       isvalidform = false;
     }
+    if (isvalidform){
+      this.submit();
+      alert("Thankyou! your message has been sent successfully");
+    }
   });
 });
 </script>
